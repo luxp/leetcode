@@ -1,0 +1,25 @@
+{
+  "name": "@luxp/leetcode",
+  "version": "0.0.1",
+  "description": "leetcode",
+  "main": " ",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxp/leetcode.git"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "Alan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luxp/leetcode/issues"
+  },
+  "homepage": "https://github.com/luxp/leetcode#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
