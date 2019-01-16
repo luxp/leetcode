@@ -4,7 +4,8 @@
   "description": "leetcode",
   "main": " ",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "submit": "node scripts/submit.js"
   },
   "repository": {
     "type": "git",

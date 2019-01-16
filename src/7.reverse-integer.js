@@ -69,5 +69,3 @@ test('reverse', () => {
   expect(reverse(1534236469)).toBe(0)
   expect(reverse(-2147483412)).toBe(-2143847412)
 })
-
-// function test() {}
