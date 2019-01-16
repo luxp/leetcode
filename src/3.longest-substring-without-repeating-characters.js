@@ -18,5 +18,3 @@ var lengthOfLongestSubstring = function(s) {
   }
   return maxLen;
 };
-
-console.log(lengthOfLongestSubstring("cdes"));

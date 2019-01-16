@@ -55,6 +55,8 @@ var longestPalindrome = function(s) {
                 if (checkPalindrome(s, i, j)) {
                     longestString = s.substr(i - j, j * 2 + 1)
                     longestLength = j + 1
+                } else {
+                    break
                 }
             }   
         } else {
@@ -65,6 +67,8 @@ var longestPalindrome = function(s) {
                 if (checkPalindrome(s, i, j)) {
                     longestString = s.substr(i - j, j * 2 + 1)
                     longestLength = j + 1
+                } else {
+                    break
                 }
             } 
         }                                                                                   
@@ -73,13 +77,10 @@ var longestPalindrome = function(s) {
     return recoverStr(longestString)
 };
 
-module.exports = {
-    checkPalindrome,
-    longestPalindrome,
-    prepareStr,
-    recoverStr
+function xxx () {
+    return '1'
 }
 
-console.time('start')
-console.log(longestPalindrome('zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir'))
-console.timeEnd('start')
+test('xxx', () => {
+    expect(xxx()).toBe('1')
+})
