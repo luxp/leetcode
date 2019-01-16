@@ -5,7 +5,8 @@
   "main": " ",
   "scripts": {
     "test": "jest",
-    "submit": "node scripts/submit.js"
+    "submit": "node scripts/submit.js",
+    "get": "leetcode show -q h -gx -l javascript -o src"
   },
   "repository": {
     "type": "git",
