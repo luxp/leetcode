@@ -18,3 +18,5 @@ var lengthOfLongestSubstring = function(s) {
   }
   return maxLen;
 };
+
+test('default', () => {})

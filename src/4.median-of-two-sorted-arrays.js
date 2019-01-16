@@ -23,3 +23,5 @@ function sortFunc(a, b) {
   }
 }
 
+test('default', () => {})
+

@@ -77,10 +77,4 @@ var longestPalindrome = function(s) {
     return recoverStr(longestString)
 };
 
-function xxx () {
-    return '1'
-}
-
-test('xxx', () => {
-    expect(xxx()).toBe('1')
-})
+test('default', () => {})

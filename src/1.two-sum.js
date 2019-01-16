@@ -28,3 +28,5 @@ var twoSum = function(nums, target) {
   }
   return null
 }
+
+test('default', () => {})
