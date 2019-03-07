@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "submit": "node scripts/submit.js",
-    "get": "leetcode show -q h -gx -l javascript -o src"
+    "get": "leetcode show -q m -gx -l javascript -o src"
   },
   "repository": {
     "type": "git",
