@@ -48,3 +48,5 @@ var groupAnagrams = function(strs) {
   })
   return Object.values(recorder)
 }
+
+test('default', () => {})
