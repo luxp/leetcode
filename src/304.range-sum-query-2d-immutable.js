@@ -50,6 +50,7 @@
  */
 var NumMatrix = function(matrix) {
   this.matrix = matrix
+  // Do some cache can optimize the speed
 }
 
 /**
