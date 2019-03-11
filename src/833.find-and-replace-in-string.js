@@ -75,7 +75,7 @@ var findReplaceString = function(S, indexes, sources, targets) {
   let sortedIndex = sortIndexes(indexes, sources, targets)
   result.push(S.substring(0, sortedIndex[0].index))
   for (let i = 0; i < sortedIndex.length; ++i) {
-    let {index, source, target} = sortedIndex[i]
+    let { index, source, target } = sortedIndex[i]
     let sourceLen = source.length
     let toReplace = S.substr(index, sourceLen)
     if (toReplace === source) {
@@ -92,33 +92,46 @@ var findReplaceString = function(S, indexes, sources, targets) {
   return result.join('')
 }
 
-function sortIndexes (indexes, sources, targets) {
-  return indexes.map((index, i) => {
-    return {
-      index,
-      source: sources[i],
-      target: targets[i]
-    }
-  }).sort((a, b) => {
-    if (a.index === b.index) return 0
-    if (a.index > b.index) return 1
-    if (a.index < b.index) return -1
-  })
+function sortIndexes(indexes, sources, targets) {
+  return indexes
+    .map((index, i) => {
+      return {
+        index,
+        source: sources[i],
+        target: targets[i]
+      }
+    })
+    .sort((a, b) => {
+      if (a.index === b.index) return 0
+      if (a.index > b.index) return 1
+      if (a.index < b.index) return -1
+    })
 }
 
 test('sourceIndex', () => {
-  expect(sortIndexes([3,5,1], [3,5,1], [3,5,1])).toEqual([
-    {index: 1, source:1, target: 1},
-    {index: 3, source:3, target: 3},
-    {index: 5, source:5, target: 5}
+  expect(sortIndexes([3, 5, 1], [3, 5, 1], [3, 5, 1])).toEqual([
+    { index: 1, source: 1, target: 1 },
+    { index: 3, source: 3, target: 3 },
+    { index: 5, source: 5, target: 5 }
   ])
 })
 
 test('default', () => {
-  expect(findReplaceString('abcd', [0,2], ["a","cd"], ["eee","ffff"])).toBe('eeebffff')
-  expect(findReplaceString('abcd', [0,2], ["ab","ec"], ["eee","ffff"])).toBe('eeecd')
+  expect(findReplaceString('abcd', [0, 2], ['a', 'cd'], ['eee', 'ffff'])).toBe(
+    'eeebffff'
+  )
+  expect(findReplaceString('abcd', [0, 2], ['ab', 'ec'], ['eee', 'ffff'])).toBe(
+    'eeecd'
+  )
 })
 
 test('default2', () => {
-  expect(findReplaceString('vmokgggqzp', [3,5,1], ["kg","ggq", "mo"], ["s","so", "bfr"])).toBe('vbfrssozp')
+  expect(
+    findReplaceString(
+      'vmokgggqzp',
+      [3, 5, 1],
+      ['kg', 'ggq', 'mo'],
+      ['s', 'so', 'bfr']
+    )
+  ).toBe('vbfrssozp')
 })
