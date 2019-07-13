@@ -77,8 +77,10 @@
 var spiralMatrixIII = function(R, C, r0, c0) {
   let currentPosition = [r0, c0]
   let result = [[r0, c0]]
-  let maxStepLength = (Math.max(R - r0, C - c0, r0, c0) + 1) * 2
-  for (let stepLength = 0; stepLength <= maxStepLength; ) {
+  let maxLength = R * C
+  let stepLength = 0
+  while (result.length < maxLength) {
+    // 面向结果
     for (let directionIndex = 0; directionIndex < 4; ++directionIndex) {
       if (directionIndex % 2 === 0) {
         ++stepLength
