@@ -4,9 +4,12 @@
   "description": "leetcode",
   "main": " ",
   "scripts": {
+    "login": "leetcode user -l",
     "test": "jest",
     "submit": "node scripts/submit.js",
-    "get": "leetcode show -q m -gx -l javascript -o src"
+    "easy": "leetcode show -q e -gx -l javascript -o src",
+    "medium": "leetcode show -q m -gx -l javascript -o src",
+    "hard": "leetcode show -q h -gx -l javascript -o src"
   },
   "repository": {
     "type": "git",
