@@ -11,12 +11,12 @@ var twoSum = function(nums, target) {
       index
     }
   })
-  nums = nums.sort(
-    (a, b) => (a.value - b.value > 0 ? 1 : a.value === b.value ? 0 : -1)
+  nums = nums.sort((a, b) =>
+    a.value - b.value > 0 ? 1 : a.value === b.value ? 0 : -1
   )
 
   let len = nums.length
-  for (let i = 0, j = len - 1; i < j;) {
+  for (let i = 0, j = len - 1; i < j; ) {
     let sum = nums[i].value + nums[j].value
     if (sum === target) {
       return [nums[i].index, nums[j].index]
