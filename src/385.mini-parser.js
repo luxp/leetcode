@@ -91,7 +91,7 @@
  * @param {string} s
  * @return {NestedInteger}
  */
-var deserialize = function(s) {
+var deserialize = function (s) {
   let value = JSON.parse(s)
   return deserializeParsedValue(value)
 }
@@ -99,7 +99,7 @@ var deserialize = function(s) {
 function deserializeParsedValue(value) {
   let nestedInteger = new NestedInteger()
   if (Array.isArray(value)) {
-    value.forEach(valueItem => {
+    value.forEach((valueItem) => {
       nestedInteger.add(deserializeParsedValue(valueItem))
     })
   } else {

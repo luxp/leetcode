@@ -3,7 +3,7 @@
  * @param {number[]} nums2
  * @return {number}
  */
-var findMedianSortedArrays = function(nums1, nums2) {
+var findMedianSortedArrays = function (nums1, nums2) {
   let allNum = nums1.concat(nums2)
   allNum.sort(sortFunc)
   if (allNum.length % 2) {

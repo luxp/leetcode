@@ -3,12 +3,12 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+var twoSum = function (nums, target) {
   let numsMap = {}
   nums = nums.map((num, index) => {
     return {
       value: num,
-      index
+      index,
     }
   })
   nums = nums.sort((a, b) =>

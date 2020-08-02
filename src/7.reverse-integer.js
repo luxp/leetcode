@@ -45,16 +45,13 @@
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
+var reverse = function (x) {
   let isNegative = x < 0
   if (isNegative) {
     x = -x
   }
   x += ''
-  x = +x
-    .split('')
-    .reverse()
-    .join('')
+  x = +x.split('').reverse().join('')
   if (x >= 2147483648) {
     return 0
   }

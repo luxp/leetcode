@@ -54,7 +54,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var hasAlternatingBits = function(n) {
+var hasAlternatingBits = function (n) {
   let binaryStr = n.toString(2)
   if (binaryStr.includes('11') || binaryStr.includes('00')) {
     return false

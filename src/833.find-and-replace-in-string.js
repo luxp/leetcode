@@ -70,7 +70,7 @@
  * @param {string[]} targets
  * @return {string}
  */
-var findReplaceString = function(S, indexes, sources, targets) {
+var findReplaceString = function (S, indexes, sources, targets) {
   let result = []
   let sortedIndex = sortIndexes(indexes, sources, targets)
   result.push(S.substring(0, sortedIndex[0].index))
@@ -98,7 +98,7 @@ function sortIndexes(indexes, sources, targets) {
       return {
         index,
         source: sources[i],
-        target: targets[i]
+        target: targets[i],
       }
     })
     .sort((a, b) => {
@@ -112,7 +112,7 @@ test('sourceIndex', () => {
   expect(sortIndexes([3, 5, 1], [3, 5, 1], [3, 5, 1])).toEqual([
     { index: 1, source: 1, target: 1 },
     { index: 3, source: 3, target: 3 },
-    { index: 5, source: 5, target: 5 }
+    { index: 5, source: 5, target: 5 },
   ])
 })
 

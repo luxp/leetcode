@@ -11,7 +11,7 @@
  * @return {ListNode}
  */
 
-var addTwoNumbers = function(l1, l2, extra = 0) {
+var addTwoNumbers = function (l1, l2, extra = 0) {
   let sumVal = l1.val + l2.val + extra
 
   let val = sumVal % 10

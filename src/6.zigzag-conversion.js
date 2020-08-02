@@ -54,7 +54,7 @@
  * @param {number} numRows
  * @return {string}
  */
-var convert = function(s, numRows) {
+var convert = function (s, numRows) {
   let result = []
   let x = 0
   let y = -1

@@ -36,13 +36,10 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs) {
+var groupAnagrams = function (strs) {
   let recorder = {}
-  strs.forEach(str => {
-    let sortedStr = str
-      .split('')
-      .sort()
-      .join('')
+  strs.forEach((str) => {
+    let sortedStr = str.split('').sort().join('')
     recorder[sortedStr] = recorder[sortedStr] || []
     recorder[sortedStr].push(str)
   })

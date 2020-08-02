@@ -74,7 +74,7 @@
  * @param {number} c0
  * @return {number[][]}
  */
-var spiralMatrixIII = function(R, C, r0, c0) {
+var spiralMatrixIII = function (R, C, r0, c0) {
   let currentPosition = [r0, c0]
   let result = [[r0, c0]]
   let maxLength = R * C
@@ -98,7 +98,12 @@ var spiralMatrixIII = function(R, C, r0, c0) {
 }
 
 function getNextPosition(currentPosition, directionIndex) {
-  let directionList = [[0, 1], [1, 0], [0, -1], [-1, 0]] // 模拟前进的方向
+  let directionList = [
+    [0, 1],
+    [1, 0],
+    [0, -1],
+    [-1, 0],
+  ] // 模拟前进的方向
   let direction = directionList[directionIndex]
   currentPosition[0] += direction[0]
   currentPosition[1] += direction[1]
@@ -120,9 +125,14 @@ test('spiralMatrixIII', () => {
     [2, 2],
     [0, 0],
     [0, 1],
-    [0, 2]
+    [0, 2],
   ])
-  expect(spiralMatrixIII(1, 4, 0, 0)).toEqual([[0, 0], [0, 1], [0, 2], [0, 3]])
+  expect(spiralMatrixIII(1, 4, 0, 0)).toEqual([
+    [0, 0],
+    [0, 1],
+    [0, 2],
+    [0, 3],
+  ])
   expect(spiralMatrixIII(5, 6, 1, 4)).toEqual([
     [1, 4],
     [1, 5],
@@ -153,6 +163,6 @@ test('spiralMatrixIII', () => {
     [3, 0],
     [2, 0],
     [1, 0],
-    [0, 0]
+    [0, 0],
   ])
 })

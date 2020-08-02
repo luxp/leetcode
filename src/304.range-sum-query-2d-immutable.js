@@ -48,7 +48,7 @@
 /**
  * @param {number[][]} matrix
  */
-var NumMatrix = function(matrix) {
+var NumMatrix = function (matrix) {
   this.matrix = matrix
   // Do some cache can optimize the speed
 }
@@ -60,7 +60,7 @@ var NumMatrix = function(matrix) {
  * @param {number} col2
  * @return {number}
  */
-NumMatrix.prototype.sumRegion = function(row1, col1, row2, col2) {
+NumMatrix.prototype.sumRegion = function (row1, col1, row2, col2) {
   let result = 0
   for (let i = row1; i <= row2; ++i) {
     for (let j = col1; j <= col2; ++j) {
@@ -82,7 +82,7 @@ test('default', () => {
     [5, 6, 3, 2, 1],
     [1, 2, 0, 1, 5],
     [4, 1, 0, 1, 7],
-    [1, 0, 3, 0, 5]
+    [1, 0, 3, 0, 5],
   ])
   expect(obj.sumRegion(2, 1, 4, 3)).toBe(8)
 })

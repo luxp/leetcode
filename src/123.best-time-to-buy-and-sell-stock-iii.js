@@ -55,7 +55,7 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
+var maxProfit = function (prices) {
   let maxValue = 0
   for (let i = 0, len = prices.length; i < len; ++i) {
     let profit

@@ -7,10 +7,7 @@
 function checkPalindrome(s, index, length) {
   let leftStr = s.substr(index - length, length)
   let rightStr = s.substr(index + 1, length)
-  rightStr = rightStr
-    .split('')
-    .reverse()
-    .join('')
+  rightStr = rightStr.split('').reverse().join('')
 
   return leftStr === rightStr
 }
@@ -38,7 +35,7 @@ function recoverStr(s) {
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function(s) {
+var longestPalindrome = function (s) {
   s = prepareStr(s)
   let len = s.length
   if (!len) {

@@ -54,7 +54,7 @@
  * @param {string} p
  * @return {number}
  */
-var findSubstringInWraproundString = function(p) {
+var findSubstringInWraproundString = function (p) {
   let subStrMap = {}
   let subStrLen = 1
   for (let i = 0, len = p.length; i < len; ++i) {
@@ -74,7 +74,7 @@ var findSubstringInWraproundString = function(p) {
   }
 
   let result = 0
-  Object.values(subStrMap).forEach(value => {
+  Object.values(subStrMap).forEach((value) => {
     result += value
   })
   return result

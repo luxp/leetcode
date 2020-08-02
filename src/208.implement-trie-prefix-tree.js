@@ -37,7 +37,7 @@
 /**
  * Initialize your data structure here.
  */
-var Trie = function() {
+var Trie = function () {
   this.data = []
 }
 
@@ -46,7 +46,7 @@ var Trie = function() {
  * @param {string} word
  * @return {void}
  */
-Trie.prototype.insert = function(word) {
+Trie.prototype.insert = function (word) {
   this.data.push(word)
 }
 
@@ -55,7 +55,7 @@ Trie.prototype.insert = function(word) {
  * @param {string} word
  * @return {boolean}
  */
-Trie.prototype.search = function(word) {
+Trie.prototype.search = function (word) {
   return this.data.includes(word)
 }
 
@@ -64,8 +64,8 @@ Trie.prototype.search = function(word) {
  * @param {string} prefix
  * @return {boolean}
  */
-Trie.prototype.startsWith = function(prefix) {
-  return this.data.some(word => {
+Trie.prototype.startsWith = function (prefix) {
+  return this.data.some((word) => {
     return word.indexOf(prefix) === 0
   })
 }

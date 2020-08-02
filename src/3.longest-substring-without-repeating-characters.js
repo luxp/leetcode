@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function(s) {
+var lengthOfLongestSubstring = function (s) {
   let len = s.length
   let maxLen = 0
   let charStartDic = {}
