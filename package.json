@@ -25,8 +25,11 @@
   },
   "homepage": "https://github.com/luxp/leetcode#readme",
   "devDependencies": {
+    "clipboardy": "^2.3.0",
     "jest": "26",
     "leetcode-cli": "2",
+    "open": "^7.1.0",
     "prettier": "2"
-  }
+  },
+  "dependencies": {}
 }
