@@ -52,4 +52,113 @@
  * @param {string[]} words
  * @return {number}
  */
-var maxProduct = function (words) {}
+var maxProduct = function (words) {
+  let wordsCount = words.length
+  let parsedWords = parseWords(words)
+  let maxProductValue = 0
+  for (let i = 0; i < wordsCount; ++i) {
+    for (let j = i + 1; j < wordsCount; ++j) {
+      let w1 = parsedWords[i]
+      let w2 = parsedWords[j]
+      let productValue = w1.length * w2.length
+      if (productValue > maxProductValue) {
+        if (checkIsPair(w1, w2)) {
+          maxProductValue = productValue
+        }
+      }
+    }
+  }
+  return maxProductValue
+}
+
+test('maxProduct', () => {
+  expect(maxProduct(['a', 'aa', 'aaa', 'aaaa'])).toBe(0)
+  expect(maxProduct(['abcw', 'baz', 'foo', 'bar', 'xtfn', 'abcdef'])).toBe(16)
+  expect(maxProduct(['a', 'ab', 'abc', 'd', 'cd', 'bcd', 'abcd'])).toBe(4)
+})
+
+function parseWords(words) {
+  return words.map((word) => {
+    let charMap = getCharMap(word)
+    let charList = Object.keys(charMap)
+    return {
+      length: word.length,
+      charCount: charList.length,
+      charList,
+      charMap,
+    }
+  })
+}
+test('parseWords', () => {
+  expect(parseWords(['a', 'aab'])).toEqual([
+    {
+      length: 1,
+      charCount: 1,
+      charList: ['a'],
+      charMap: {
+        a: true,
+      },
+    },
+    {
+      length: 3,
+      charCount: 2,
+      charList: ['a', 'b'],
+      charMap: {
+        a: true,
+        b: true,
+      },
+    },
+  ])
+})
+
+function getCharMap(word) {
+  let charMap = {}
+  for (let char of word) {
+    charMap[char] = true
+  }
+  return charMap
+}
+test('getCharMap', () => {
+  expect(getCharMap('aabaab')).toEqual({
+    a: true,
+    b: true,
+  })
+})
+
+function checkIsPair(w1, w2) {
+  if (w1.charCount > w2.charCount) {
+    ;[w2, w1] = [w1, w2]
+  }
+  return !w1.charList.some((charKey) => w2.charMap[charKey])
+}
+test('checkIsPair', () => {
+  let w1 = {
+    length: 1,
+    charCount: 1,
+    charList: ['a'],
+    charMap: {
+      a: true,
+    },
+  }
+  let w2 = {
+    length: 2,
+    charCount: 2,
+    charList: ['a', 'b'],
+    charMap: {
+      a: true,
+      b: true,
+    },
+  }
+  let w3 = {
+    length: 2,
+    charCount: 2,
+    charList: ['c', 'b'],
+    charMap: {
+      c: true,
+      b: true,
+    },
+  }
+  expect(checkIsPair(w1, w1)).toBe(false)
+  expect(checkIsPair(w2, w1)).toBe(false)
+  expect(checkIsPair(w3, w1)).toBe(true)
+})
