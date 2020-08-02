@@ -6,6 +6,7 @@ You can just write the jest test in your file (see the examples in `src` directo
 
 ## Usage
 
+- Fork this repo
 - `npm install`
 <!-- - `npm run login` to sign in with your leetcode account -->
 - `npm run easy` to get an easy problem
