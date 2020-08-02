@@ -1,4 +1,5 @@
 const clipboardy = require('clipboardy')
+const chalk = require('chalk')
 const fs = require('fs')
 const open = require('open')
 
@@ -16,6 +17,11 @@ fileToSubmitContent += '\nfunction test() {}'
 // fs.writeFileSync(fileToSubmitPath, fileToSubmitContent)
 // execSync(`leetcode submit ${fileToSubmitPath}`, { stdio: 'inherit' })
 clipboardy.writeSync(fileToSubmitContent.toString())
+console.log(
+  chalk.blue(
+    'The submit content has already copied to your clipboard, you can just paste it.\n'
+  )
+)
 let leetcodeLink = getTheProblemLeetcodeLink(fileToSubmitContent)
 open(leetcodeLink)
 // execSync(`rm ${fileToSubmitPath}`)
